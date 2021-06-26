@@ -1,0 +1,14 @@
+<% if target.errors.any? %>
+  <div id="error-explanation">
+    <h2>Submission failed because <%= pluralize(target.errors.count, "required item") %> <%= "is".pluralize(target.errors.count) %> invalid:</h2>
+    <% if target.errors.count < 7 %>
+      <ul>
+        <% target.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Please be sure that all required fields are completed.</p>
+    <% end %>
+  </div>
+<% end %>

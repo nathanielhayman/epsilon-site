@@ -1,0 +1,27 @@
+<%= form_for @site_payment, html: { class: "full-page" } do |f| %>
+    <div class="field">
+        <%= f.label :pages, "Page Titles*" %> <br>
+        <div class="form-explanation">List the titles of each page or section you want on the website (e.x. "Pricing, About, Portfolio").</div>
+        <%= f.text_field :pages, class: "text" %>
+    </div>
+    <div class="field">
+        <%= f.label :description, "Description*" %> <br>
+        <div class="form-explanation">In as much detail as possible, describe everything you want from the site.</div>
+        <%= f.text_area :description %>
+    </div>
+    <div class="field">
+        <%= f.label :description, "Logo" %> <br>
+        <div class="form-explanation">Upload any images of your brand's logo that you want used on the website.</div>
+        <%= f.file_field :description %>
+    </div>
+    <div class="field">
+        <%= f.label :contact_info, "Contact Information" %> <br>
+        <div class="form-explanation">If you feel it is necessary, you may provide a discord tag or email address. You can always reach me at switchy.development@gmail.com or on Discord at Switchy#2413.</div>
+        <%= f.text_field :contact_info, class: "text" %>
+    </div>
+    <div class="field">
+        <%= f.label :description, ("Do you agree to the #{link_to "terms and conditions", "/terms"}?").html_safe, class: "form-explanation" %>
+        <%= f.check_box :description, class: "checkbox" %>
+    </div>
+    <%= f.submit "Continue", id: "form-btn", data: { disable_with: "Processing..." } %>
+<% end %>

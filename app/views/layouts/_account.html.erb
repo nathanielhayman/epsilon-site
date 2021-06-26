@@ -1,0 +1,50 @@
+<div id="account-dropdown" class="overlay">
+    <% if !current_user.nil? %>
+        <div class="flex-container">
+            <div class="flex-element">
+                <img id="account-image" src="/assets/businessman">
+            </div>
+            <div class="flex-element">
+                <h2>Anonymous User</h2>
+                <h2><%= current_user.email %></h2>
+            </div>
+        </div>
+        <hr>
+        <div class="flex-container">
+            <div class="flex-element">
+                <img class="button-icon" src="/assets/gear">
+            </div>
+            <div class="flex-element">
+                <h2><%= link_to "Account Settings", "/settings" %></h2>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-element">
+                <img class="button-icon" src="/assets/list">
+            </div>
+            <div class="flex-element">
+                <h2><%= link_to "Dashboard", "/dashboard" %></h2>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-element">
+                <img class="button-icon" src="/assets/shopping_cart">
+            </div>
+            <div class="flex-element">
+                <h2><%= link_to "Cart", "/cart" %></h2>
+            </div>
+        </div>
+        <hr>
+        <div class="flex-container">
+            <div class="flex-element">
+            
+            </div>
+            <div class="flex-element">
+                <h2><%= link_to "Log Out", destroy_user_session_path, method: :delete %></h2>
+            </div>
+        </div>
+        
+    <% else %>
+        <h3>Please <%= link_to "log in", new_user_session_path %> to your account.</h3>
+    <% end %>
+</div>

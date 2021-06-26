@@ -1,0 +1,78 @@
+<div id="medium-head">
+    <div id="payment-logo-back" class="js-scroll slide-top">
+      <p>$</p>
+    </div>
+    <div class="spacer-small"></div>
+    <div class="centered js-scroll fade-in"><h1>Create an Order</h1></div>
+    <svg class="wave-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,192L120,202.7C240,213,480,235,720,229.3C960,224,1200,192,1320,176L1440,160L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+    </svg>
+</div>
+<div class="cover-background">
+  <div class="centered">
+    <h2 class="content-head">Select a Plan</h2>
+    <div class="hr-head"></div>
+  </div>
+  <br>
+    <div class="flex-container">    
+      <a href="/site-order"><div class="flex-element js-scroll fade-in-bottom">
+        <div class="price-card-reg" <% if params[:plan] && params[:plan] == "1" %>style="border: 5px solid  red;"<% end %>>
+          <div class="price-card-indicator">1</div>
+          <h1>Budget</h1>
+          <p>• Inexpensive 
+• 2-4 Day Delivery
+• 2-3 Pages
+• Responsive Design
+• Social Media Integration
+• Contact forms</p>
+      <h3>from</h3>
+      <h2>$85</h2>
+    </div>
+  </div></a>
+  <a href="/site-order"><div class="flex-element js-scroll fade-in-bottom">
+    <div class="price-card-reg" 
+        <% if params[:plan] && params[:plan] == "2" %>style="border: 5px solid red;"<% end %>>
+      <div class="price-card-indicator">2</div>
+      <h1>Regular</h1>
+      <p>• Professional
+• 5-7 Day Delivery
+• 3-5 Pages
+• Responsive Design
+• Social Media Integration
+• Account System
+• Extended forms
+• Post-delivery support</p>
+      <h3>from</h3>
+      <h2>$160</h2>
+    </div>
+  </div></a>
+  <a href="/site-order"><div class="flex-element js-scroll fade-in-bottom">
+    <div class="price-card-reg"
+        <% if params[:plan] && params[:plan] == "3" %>style="border: 5px solid red;"<% end %>>
+      <div class="price-card-indicator">3</div>
+      <h1>Premium</h1>
+      <p>• Business-Oriented
+• 7+ Day Delivery
+• 6+ Pages
+• Responsive Design
+• Account System
+• Ecommerce Capabilities
+• And much more...</p>
+        <h3>from</h3>
+        <h2>$250</h2>
+      </div>
+    </div></a>
+  </div>
+</div>
+<div class="flex-container">
+    <div class="flex-element js-scroll slide-left">
+        <div class="form">
+            <%= render "shared/error_messages", target: @site_payment %>
+            <%= render "form" %>
+        </div>
+    </div>
+    <div class="flex-element js-scroll slide-right">
+        <img class="svg-image" src="/assets/clipboard">
+    </div>
+</div>
+<div class="spacer-small"></div>

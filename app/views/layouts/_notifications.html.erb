@@ -1,0 +1,27 @@
+<div id="notifications-dropdown" class="overlay">
+    <% if current_user.nil? %>
+        <div class="notifications-container">
+            <h3>Welcome to Epsilon!</h3>
+            <p>Click on this message to create an account and start building the application of your dreams.</p>
+            <p class="timestamp"><%= Time.now.strftime("%l:%m %p") %></p>
+            <hr>
+        </div>
+    <% else %>
+        <% @notifications.each do |n| %>
+            <div class="notifications-container">
+                <h3><%= n.title %></h3>
+                <p><%= n.description %></p>
+                <% if n.created_at.year == Time.now.year %>
+                    <% if n.created_at.day == Time.now.day %>
+                        <p class="timestamp"><%= n.created_at.strftime("%l:%m %p") %></p>
+                    <% else %>
+                        <p class="timestamp"><%= n.created_at.strftime("%m/%e") %></p>
+                    <% end %>
+                <% else %>
+                    <p class="timestamp"><%= n.created_at.strftime("%m/%e/%y") %></p>
+                <% end %>
+                <hr>
+            </div>
+        <% end %>
+    <% end %>
+</div>
